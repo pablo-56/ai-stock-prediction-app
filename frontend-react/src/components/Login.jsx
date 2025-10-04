@@ -1,4 +1,4 @@
-import {useContext, useState} from 'react'
+import React, {useContext, useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
@@ -26,7 +26,7 @@ const Login = () => {
       localStorage.setItem('refreshToken', response.data.refresh)
       console.log('Login successful');
       setIsLoggedIn(true)
-      navigate('/')
+      navigate('/dashboard')
     }catch(error){
       console.error('Invalid credentials')
       setError('Invalid credentials')
